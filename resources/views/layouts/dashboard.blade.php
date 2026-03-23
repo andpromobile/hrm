@@ -109,7 +109,7 @@
 
                          <li
                             class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="{{ route('roles.index') }}" class='sidebar-link'>
                                 <i class="bi bi-tag"></i>
                                 <span>Roles</span>
                             </a>
@@ -119,9 +119,9 @@
 
                          <li
                             class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="{{ route('presences.index') }}" class='sidebar-link'>
                                 <i class="bi bi-table"></i>
-                                <span>Precenses</span>
+                                <span>Presences</span>
                             </a>
 
 
@@ -129,7 +129,7 @@
 
                          <li
                             class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="{{ route('payrolls.index') }}" class='sidebar-link'>
                                 <i class="bi bi-currency-dollar"></i>
                                 <span>Payrolls</span>
                             </a>
@@ -139,7 +139,7 @@
 
                          <li
                             class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="{{ route('leave-requests.index') }}" class='sidebar-link'>
                                 <i class="bi bi-shift-fill"></i>
                                 <span>Leave Request</span>
                             </a>
@@ -149,7 +149,7 @@
 
                          <li
                             class="sidebar-item">
-                            <a href="index.html" class='sidebar-link'>
+                            <a href="{{ route('logout') }}" class='sidebar-link'>
                                 <i class="bi bi-box-arrow-right"></i>
                                 <span>Logout</span>
                             </a>

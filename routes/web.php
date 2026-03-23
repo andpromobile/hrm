@@ -6,6 +6,10 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\PresenceController;
+use App\Http\Controllers\LeaveRequestController;
+use App\Http\Controllers\PayrollController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +27,18 @@ Route::get('/tasks/{task}/mark-as-pending', [TaskController::class, 'markAsPendi
 
 // Handle Department routes
 Route::resource('departments', DepartmentController::class);
+
+// Handle Role Routes
+Route::resource('roles', RoleController::class);
+
+// Handle Precense routes
+Route::resource('presences', PresenceController::class);
+
+// Handle Leave Request routes
+Route::resource('leave-requests', LeaveRequestController::class);
+
+// Handle Payroll routes
+Route::resource('payrolls', PayrollController::class);
 
 // Handle Employee routes
 Route::resource('employees', EmployeeController::class);
