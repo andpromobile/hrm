@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use App\Models\Department;
+use App\Models\Role;
 
 class EmployeeController extends Controller
 {
@@ -26,7 +28,7 @@ class EmployeeController extends Controller
         $request->validate([
             'full_name' => 'required|string|max:255',
             'email' => 'required|email|unique:employees,email',
-            'phone_number' => 'required|string|max:20',
+            'phone_number' => 'required|numeric|max:20',
             'address' => 'required|string|max:255',
             'birth_date' => 'required|date',
             'hire_date' => 'required|date',
@@ -48,7 +50,10 @@ class EmployeeController extends Controller
 
     public function edit(Employee $employee)
     {
-        return view('employees.edit', compact('employee'));
+        $departments = Department::all();
+        $roles = Role::all();
+
+        return view('employees.edit', compact('employee', 'departments', 'roles'));
     }
 
     public function update(Request $request, Employee $employee)

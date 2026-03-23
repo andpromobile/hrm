@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\DepartmentController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,6 +20,9 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 Route::resource('tasks', TaskController::class);
 Route::get('/tasks/{task}/mark-as-done', [TaskController::class, 'markAsDone'])->name('tasks.markAsDone');
 Route::get('/tasks/{task}/mark-as-pending', [TaskController::class, 'markAsPending'])->name('tasks.markAsPending');
+
+// Handle Department routes
+Route::resource('departments', DepartmentController::class);
 
 // Handle Employee routes
 Route::resource('employees', EmployeeController::class);
